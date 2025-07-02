@@ -1,10 +1,7 @@
-package org.testClollection;
+package org.testUtilityClollection;
 
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.utilityPractice.ExcelDataConnection;
-
-import java.io.IOException;
 
 public class ExcelDataConnectionTest {
     @Test(dataProvider = "connectWithExcel", dataProviderClass = ExcelDataConnection.class)

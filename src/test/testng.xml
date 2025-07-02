@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite parallel="classes" name="Practice Suite">
+<!--<suite parallel="classes" name="Practice Suite">
     <test thread-count="5" parallel="classes" name="Test Basics 1">
         <classes>
             <class name="org.seleniumGrid.GoogleTest"/>
             <class name="org.seleniumGrid.FacebookTest"/>
         </classes>
-    </test> <!-- Test -->
-</suite> <!-- Suite -->
+    </test> &lt;!&ndash; Test &ndash;&gt;
+</suite> &lt;!&ndash; Suite &ndash;&gt;-->
+<suite name="RetrySuite" verbose="3" parallel="none">
+    <listeners>
+<!--        <listener class-name="org.analyzer.TestListener"/>-->
+        <listener class-name="org.analyzer.MyAnnotationTransformer"/>
+    </listeners>
+    <test name="RetryTests" time-out="60000">
+        <classes>
+            <class name="org.analyzer.TestRetryAnnotationTransformer"/>
+        </classes>
+    </test>
+</suite>
